@@ -1,0 +1,17 @@
+<div class="info_Content">
+    <div class="info_Title"><span class="titileSpan" ng-bind="model.title"></span>
+        <div class="barHSubContainer">
+            <div class="dataValue"></div>
+            <span>指标值</span></div>
+        <div class="barHSubContainer">
+            <div class="dataStander"></div>
+            <span>标准线</span></div>
+        <div class="barHSubContainer">
+            <select ng-model="selectedObj" ng-options="cfg.DisplayName for cfg in model.config"  ng-change="selectChanged(selectedObj)">
+            </select>
+        </div>
+    </div>
+    <div class="info_Text">
+        <div id="bar-chart-container" style="width:360px;height:150px;"></div>
+    </div>
+</div>'

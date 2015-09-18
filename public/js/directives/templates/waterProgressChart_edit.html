@@ -1,0 +1,29 @@
+<div class="editPropertyPanel">
+    <span>控件标题：</span>
+    <input type="text" value="" ng-model="preModel.title"/>
+    <hr>
+    <span>数据表</span>
+    <select title="数据表" ng-model="preModel.sheet" ng-options="schema as schema for schema in controlFuns.getSheets()">
+    </select>
+    <hr>
+    <span>请选择排名的数据列:</span>
+    <select ng-model="preModel.dataColumn" ng-options="columnName for columnName in controlFuns.getDataColumnNames()"
+            ng-change="controlFuns.selectColChanged(preModel.dataColumn)"></select>
+    <span>请选择排名的组织单元:</span>
+    <select ng-model="preModel.unitColumn" ng-options="columnName for columnName in controlFuns.getDataColumnNames()"
+            ng-change="controlFuns.selectUnitColChanged(preModel.unitColumn)"></select>
+    <hr>
+    <span>颜色和区间配置：</span>
+    <table class="ui-edit-innerTable">
+        <tr>
+            <th>颜色</th><th>最小值</th><th>最大值</th><th></th>
+        </tr>
+        <tr ng-repeat="cfg in preModel.rangeConfig">
+            <td><input type="color" ng-model="cfg.color" name="color"></td>
+            <td><input type="text" ng-model="cfg.min" name="minValue"></td>
+            <td><input type="text" ng-model="cfg.max" name="maxValue"></td>
+            <td> <a href="javascript:;" ng-click="controlFuns.removeColumn($index)" class="ui-add-remove">-</a></td>
+        </tr>
+    </table>
+    <div> <a href="javascript:;" ng-click="controlFuns.addColumn()" class="ui-add-remove">+</a></div>
+</div>

@@ -1,0 +1,236 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+    <title>可视通</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/swiper.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/com.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src='js/jquery.min.js'></script>
+    <script type="text/javascript" src='js/swiper.min.js'></script>
+</head>
+<body>
+    <div class="top">
+        <!-- nav start -->
+        <div class="nav" style="position: fixed; top: 0px;">
+            <div class="nav-inner">
+                <a class="logo f_l" href="#">
+                    <img src="images/logo.png" alt="可视通" />
+                </a>
+                <div class="nav-list f_r">
+                    <h2><a href="#" class="active">首页</a></h2>
+                    <h2>
+                        <a href="#">产品</a>
+                        <ul>
+                            <i></i>
+                            <li><a href="#">功能介绍</a></li>
+                            <li><a href="#">微商云套餐</a></li>
+                        </ul>
+                    </h2>
+                    <h2>
+                        <a href="#">案例</a>
+
+                    </h2>
+                    <h2>
+                        <a href="#">文档</a>
+
+                    </h2>
+                    <h2><a href="#">关于</a></h2>
+                    <span>
+                        <a href="reg.html" class="sqty">注册</a>
+                        <a href="javascript:void(0)" target="_blank" id="login-index">登录</a>&nbsp;
+
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="ding" id="ding"></div>
+    </div>
+
+    <div id="loginBox">
+        <div class="login-panel">
+            <h3>登录</h3>
+            <div class="login-mod">
+                    <ul>
+                        <li class="input_text">
+                            <label for="emailID" class="login_pad">用户名</label>
+                            <input class="text" id="emailID" name="username" placeholder="用户名" onfocus="this.type='text'">
+                        </li>
+                        <li class="input_text pwd">
+                            <label for="passwordStr" class="login_pwd">密码</label>
+                            <input class="text" id="passwordStr" name="password" placeholder="密码" onfocus="this.type='password'">
+                        </li>
+                        <li>
+                        <span>
+                         <input class="btn" type="button" id="login" style="background-image:url(images/index-login-btn.png); width: 293px; height:38px;s ">
+                        </span>
+                        </li>
+                    </ul>
+                <!--<a href="/index.html?g=Home&amp;m=Index&amp;a=forgetpwdbyemail">忘记密码找回</a>-->
+            </div>
+        </div>
+        <div class="login-cover"></div>
+    </div>
+    <!-- banner start -->
+    <div class="banner">
+        <div class="banner-img">
+            <ul>
+                <li class="banner01">
+                    <img src="images/banner01.png" id="banner01-bg">
+                </li>
+                <li class="banner02">
+                    <img src="images/banner02.png" id="banner02-bg">
+                </li>
+                <li class="banner03">
+                    <img src="images/banner03.png" id="banner03-bg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="wsy-main-con1">
+        <div class="step" id="step_1">
+            <div class="step_img"></div>
+            <div class="step_title">
+                <span>第一步</span><span>选择模板</span>
+            </div>
+            <div class="step_desc">根据行业数据特点，选择已有的展现模板，或进行定制</div>
+        </div>
+        <div class="step" id="step_2">
+            <div class="step_img"></div>
+            <div class="step_title">
+                <span>第二步</span><span>数据导入</span>
+            </div>
+            <div class="step_desc">将要展示的数据源接入，可选择数据文件上传，或数据库了连接</div>
+        </div>
+        <div class="step" id="step_3">
+            <div class="step_img"></div>
+            <div class="step_title">
+                <span>第三步</span><span>主题布局</span>
+            </div>
+            <div class="step_desc">根据情况挑选模板中提供的主题配色以及布局方案，进行初步的个性调整</div>
+        </div>
+        <div class="step" id="step_4">
+            <div class="step_img"></div>
+            <div class="step_title">
+                <span>第四步</span><span>空间配置</span>
+            </div>
+            <div class="step_desc">将展现形式与数据字段绑定，并配置控件相关参数</div>
+        </div>
+        <div class="step" id="step_5">
+            <div class="step_img">
+            </div>
+            <div class="step_title">
+                <span>第五步</span><span>系统发布</span>
+            </div>
+            <div class="step_desc">完成所有配置，保存发布后，系统便已成型。</div>
+        </div>
+    </div>
+
+    <div class="wsy-main-con2">
+        <h2>解决方案介绍</h2>
+        <div class="top-classify">
+            <ul>
+                <li class="current">行业数据展示</li>
+                <li>动态交互展示</li>
+                <li>快速响应搭建</li>
+
+            </ul>
+        </div>
+        <div class="wsy-solution">
+            <div class="solution-arrow solution-arrow-left">
+                <img src="images/arrow_left.png">
+            </div>
+            <div class="solution-arrow solution-arrow-right">
+                <img src="images/arrow_right.png">
+            </div>
+            <div class="wsy-solution-main">
+                <ul>
+                    <li>
+                        <div class="solution-word" id="solution-1">
+                            <div class="solution-word-title">
+                                只有行业数据，却找不到行之有效的展示手段？？PPT太过简单，做一套系统又价值不菲？
+                            </div>
+                            <div class="solution-word-line">
+
+                            </div>
+                            <div class="solution-word-desc">
+                                可视通提供专业的行业模板，快速的生成可视化系统的能力，只需稍等片刻便可轻松生成属于自己的数据可视化系统。
+                            </div>
+                        </div>
+                        <img src="images/solution-img1.png">
+                    </li>
+                    <li>
+                        <div class="solution-word" id="solution-2">
+                            <div class="solution-word-title">PPT只能展示既定的数据，数据一旦变化，又要重做。讲解时只能按照一定顺序，一旦嘉宾有疑问，只能口头解释。</div>
+                            <div class="solution-word-line"></div>
+                            <div class="solution-word-desc">可视通通过连接实时数据源，做到数据动态更新，同时所有控件支持交互，可对数据进行上卷下钻，排序汇总，从更多维度讲解数据蕴含的故事。</div>
+                        </div>
+                        <img src="images/solution-img2.png">
+                    </li>
+                    <li>
+                        <div class="solution-word" id="solution-3">
+                            <div class="solution-word-title">热点事件发生，要求团队立即搭建一个系统去进行数据可视化分析，但是根本来不及。</div>
+                            <div class="solution-word-line"></div>
+                            <div class="solution-word-desc">可视通内置多种模板与可视化控件，只需要提供数据和几次鼠标点击，便可快速打造一个热点事件系统，可视通内部提供的“应急宝”“通勤宝”便是由此而来。</div>
+                        </div>
+                        <img src="images/solution-img3.png">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="new_title">
+        <h2>经典案例</h2>
+
+    </div>
+    <div class="case-content">
+        <div class="swiper-container slider-case">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/zf1.png"></div>
+                <div class="swiper-slide"><img src="images/fz1.png"></div>
+                <div class="swiper-slide"><img src="images/3c1.png"></div>
+
+            </div>
+            <!-- Add Pagination -->
+            <!--<div class="swiper-pagination case-pagination"></div>-->
+        </div>
+    </div>
+    <div style=" border-bottom:2px solid #f4f4f4"></div>
+    <div class="footer-line"></div>
+
+    <div id="footer">
+        <div class="ditop">
+            <div class="di-le-logo">可视通</div>
+            <div class="di-zi-new" style="width: 70px;"><div class="name">首页</div><a href="#">首页</a></div>
+            <div class="di-zi-new">
+                <div class="name">产品</div>
+                <a href="#">产品介绍</a>
+                <a href="#">功能说明</a>
+                <a href="#">微商云</a>
+            </div>
+            <div class="di-zi-new">
+                <div class="name">客户</div>
+                <a href="#">客户案例</a>
+            </div>
+            <div class="di-zi-new">
+                <div class="name">文档</div>
+                <a href="#">使用指南</a><a href="#">Q & A</a>
+            </div>
+            <div class="di-zi-new" style="width: 150px;">
+                <div class="name">关于</div>
+                <a href="#">关于我们</a>
+            </div>
+            <div class="di-zi-new" style="width: 175px; ">
+                <div class="name"  style=" color:#747474">联系我们</div>
+                <div class="contacting">QQ：2517646064</div>
+                <div class="contacting">电话：010-58749307</div>
+            </div>
+        </div>
+        <div class="dibottom">© 2014 版权所有 软通动力控股有限公司京ICP备11019727号</div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+<script type="text/javascript" src="{iss::RES}/js/scrolltopcontrol.js"></script>

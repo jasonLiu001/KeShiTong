@@ -1,0 +1,9 @@
+<div> 
+    <div ng-bind="model.title" class="lengedTitle"></div>
+    <ul>
+        <li ng-repeat="level in model.levels" >
+            <span ng-style="getBgColor(level.color)" ng-class="model.legend"></span>
+            <span ng-bind="level.text"></span>
+        </li>
+    </ul>
+</div>

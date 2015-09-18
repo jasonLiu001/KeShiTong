@@ -1,0 +1,21 @@
+<div class="editPropertyPanel">
+    <span>Rose控件标题：</span>
+    <input type="text" value="" ng-model="preModel.title"/>
+    <hr>
+    <span>数据表</span>
+    <select title="数据表" ng-model="preModel.sheet" ng-options="schema as schema for schema in controlFuns.getSheets()">
+    </select>
+    <hr>
+    <span>请选择用来分组的数据列</span>
+    <select ng-model="preModel.dataColumn" ng-options="columnName for columnName in controlFuns.getDataColumnNames()" ng-change="controlFuns.selectColChanged(preModel.dataColumn)"></select>
+    <div class="ui-colors">
+        <span>分组设置：</span>
+        <div ng-repeat="cfg in preModel.config">
+            <input type="text" ng-model="cfg.value" />
+            <input type="text" ng-model="cfg.name" />
+            <input type="color" ng-model="cfg.color" />
+            <a href="javascript:;" ng-click="controlFuns.removeColumn($index)" class="ui-add-remove">-</a>
+        </div>
+        <div> <a href="javascript:;" ng-click="controlFuns.addColumn()" class="ui-add-remove">+</a></div>
+    </div>
+</div>

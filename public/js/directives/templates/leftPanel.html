@@ -1,0 +1,67 @@
+
+<div id="leftPanel" style=" width:200px;">
+    <!-- Nav tabs -->
+    <div id="LeftMenu" class="LeftMenu" ng-show="show">
+        <!--ng-show="show"-->
+        <ul id="leftTab" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">场景</a></li>
+            <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">数据源</a></li>
+            <li role="presentation"><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab">主题</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tab1">
+                <div class="sceneItem" ng-repeat="item in scenarios" ng-click="changeLayout(item.id)">
+                    <a>
+                        <img src="{{item.icon}}" title="{{item.title}}" />
+                        <div class="sceneItemTitle" ng-bind="item.title">场景一</div>
+                    </a>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab2">
+                <div class="dsItem" ng-repeat="item in ds track by $index" ng-click="changeDataSource()">
+                    <a title="点击切换 {{item.title}}">
+                        <img src="/images/data_excel.png"/>
+                        <div class="dsItemTitle" ng-bind="item.title"></div>
+                    </a>
+                </div>
+                <div class="dsItem">
+                    <a data-toggle="modal" data-target="#uploadModal" href="#" title="添加数据源">
+                        <img src="/images/thumbnail-add.png" alt="Upload" />
+                    </a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">上传数据源</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div style=" padding:7px ;">
+                                        <span class="modal-value">数据源名称:</span> <input type="text" ng-model="dsName"  />
+                                    </div>
+                                    <div class="modal-file" ><input type="file" id="excel" name="excel" /></div>
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" ng-click="uploadDataSource()">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab3">
+                <div class="themeItem" ng-repeat="t in theme" ng-click="changeTheme()">
+                    <img src="{{t.icon}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div id="leftListFrame" class="ListFrame leftListFrame " ng-class="Indent" ng-click="autoHide()"></div>-->
+</div>

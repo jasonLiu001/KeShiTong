@@ -1,0 +1,17 @@
+<div class="info_Content"> 
+    <div class="info_Title" ng-bind="model.title"></div> 
+    <div class="info_Text"> 
+        <table id="chart6" border="0" cellpadding="0" cellspacing="0"> 
+            <tr> 
+                <td>排名</td>
+                <td ng-bind="model.groupByColumn.title"></td>
+                <td ng-repeat="col in model.columns" ng-bind="col.title"></td>
+                </tr>
+            <tr ng-repeat="item in data | orderBy :['orderByResult'] | limitTo: model.limit">
+                <td ng-bind="$index + 1"></td>
+                <td><img src="{{model.icon}}"><span ng-bind="item.title" title="{{item.name}}"></span></td>
+                <td ng-repeat="col in item.columns track by $index" ng-bind="col"></td>
+            </tr>
+        </table> 
+    </div> 
+</div>

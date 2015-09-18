@@ -1,0 +1,69 @@
+<div class="editPropertyPanel">
+    <table class="ui-editTable">
+        <tr>
+            <td><span>标题</span></td>
+            <td><input type="text" ng-model="preModel.title"/></td>
+        </tr>
+        <tr>
+            <td><span>数据表</span></td>
+            <td>
+                <select title="数据表" ng-model="preModel.sheet" ng-options="schema as schema for schema in controlFuns.getSheets()">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><span>分组</span></td>
+            <td>
+                <select class="ui-schema"
+                        ng-options="schema as schema for schema in controlFuns.getDataSchema()"
+                        ng-model="preModel.groupByColumn.name"></select>
+                <input type="text" ng-model="preModel.groupByColumn.title">
+                <select class="ui-schema"
+                        ng-options="ic as ic for ic in controlFuns.getIcons()"
+                        ng-change="controlFuns.iconChange()" ng-model="controlFuns.preIcon">
+
+                </select>
+                <img src="{{preModel.icon}}">
+            </td>
+        </tr>
+        <tr>
+            <td><span>行数</span></td>
+            <td><input type="text" class="ui-edit-textbox1" ng-model="preModel.limit"></td>
+        </tr>
+        <tr>
+            <td><span>列配置</span>
+                <a href="javascript:;" ng-click="controlFuns.addColumn()" class="ui-add-remove">+</a>
+            </td>
+            <td>
+                <table class="ui-edit-repeat-table1">
+                    <tr>
+                        <th><span>选择列</span></th>
+                        <th><span>显示名称</span></th>
+                        <th><span>权重</span></th>
+                        <th></th>
+                    </tr>
+
+                    <tr ng-repeat="col in preModel.columns">
+                        <td>
+                            <select class="ui-schema"
+                                    ng-options="schema as schema for schema in controlFuns.getDataSchema()"
+                                    ng-model="col.name"></select>
+                        </td>
+                        <td>
+                            <input type="text" class="ui-edit-textbox1" ng-model="col.title">
+                        </td>
+                        <td>
+                            <input type="text" class="ui-edit-textbox1" ng-model="col.weight">
+                        </td>
+                        <td>
+                            <a href="javascript:;" ng-click="controlFuns.removeColumn($index)" class="ui-add-remove">-</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+
+</div>

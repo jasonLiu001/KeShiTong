@@ -1,0 +1,56 @@
+<div class="editPropertyPanel">
+    <style type="text/css">
+        .barChartEditContainer select,  .barChartEditContainer input
+        {
+            margin: 3px;
+        }
+        .barChartEditContainer input
+        {
+            width:100px;;
+        }
+        .barChartEditContainer a:hover
+        {
+            color: #fff;
+        }
+    </style>
+    <div class="barChartEditContainer">
+        <span>标题: </span><input type="text" ng-model="preModel.title"/>
+        <hr>
+        <span>数据表: </span>
+        <select title="数据表" ng-model="preModel.sheet"
+                ng-options="schema as schema for schema in controlFuns.getSheets()">
+        </select>
+        <hr>
+        <table>
+            <tr>
+                <th>数据字段</th>
+                <th>显示名称</th>
+                <th>标准值</th>
+                <th>Y轴最大值</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="cfg in preModel.config">
+                <td>
+                    <select title="数据字段" ng-model="cfg.columnName"
+                            ng-options="schema as schema for schema in controlFuns.getDataColumns()">
+                    </select>
+                </td>
+                <td>
+                    <input type="text" title="显示名称" ng-model="cfg.DisplayName"/>
+                </td>
+                <td>
+                    <input type="text" title="标准值" ng-model="cfg.standerValue"/>
+                </td>
+                <td>
+                    <input type="text" title="Y轴最大值" ng-model="cfg.maxValue"/>
+                </td>
+                <td>
+                    <a href="javascript:;" ng-click="controlFuns.removeColumn($index)" class="ui-add-remove">-</a>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="javascript:;" ng-click="controlFuns.addColumn()" class="ui-add-remove">Add</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

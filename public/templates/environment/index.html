@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <link href="stylesheets/css.css" type="text/css" rel="stylesheet" />
+    <link href='http://www.youziku.com/webfont/NameCSS/32780' rel='stylesheet' type='text/css' />
+    <script src="http://js.arcgis.com/3.14/"></script>
+    <script src="javascripts/angular.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.tools.js" type="text/javascript"></script>
+    <script src="javascripts/app.js" type="text/javascript"></script>
+    <!--<script src="javascripts/index.js" type="text/javascript"></script>-->
+    <script src="javascripts/components.js" type="text/javascript"></script>
+    <script src="javascripts/ECharts/echarts-all.js"></script>
+</head>
+<body data-ng-app="tpl">
+    <div class="main_Content" data-ng-controller="tplController">
+        <!--<div id="map_Content"></div>-->
+       <map-gis></map-gis>
+        <div class="left_Content">
+            <div class="top_Content">
+                <div class="title" ng-bind="appTitle" ng-dblclick="toggleEditMode()"></div>
+                <input class="edit title" ng-model="appTitle" ng-keyup="editOnEnter()"/>
+                <client-full-time></client-full-time>
+            </div>
+            <blocks-chart title="水体质量实时监测结果概览"></blocks-chart>
+            <div class="info_Content">
+                <rose-chart title="水体质量监测地域分布概览"></rose-chart>
+            </div>
+            <water-progress-chart title="水体质量监测污染度排名"></water-progress-chart>
+        </div>
+        <legend title="图例（水体质量）"></legend>
+        <div class="bottom_Tools">
+            <span class="bottom_icon">
+                <img src="images/ico_persontip.png" />
+            </span>
+            <div class="bottom_Positon" ng-bind="coordinates"></div>
+            <timeline></timeline>
+            <div class="bootom_SwitchMap">
+                <label><input type="radio" checked name="basemap" ng-click="switchBaseMap('default')">默认</label>
+                <label><input type="radio" name="basemap" ng-click="switchBaseMap('satellite')">topo</label>
+                <label><input type="radio" name="basemap" ng-click="switchBaseMap('gray')">灰色</label>
+                <label><input type="radio" name="basemap" ng-click="switchBaseMap('streets')">街道</label>
+                <label><input type="radio" name="basemap" ng-click="switchBaseMap('topo')">topo</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

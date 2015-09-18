@@ -1,0 +1,32 @@
+<div class="main_Content">
+    <link rel="stylesheet" href="{{stylePath}}" />
+    <link href="/css/layout2_css.css" rel="stylesheet">
+    <map-gis></map-gis>
+    <div id="left_Content" class="left_Content" ng-sortable="dragConfig">
+        <div class="top_Content">
+            <div class="titleZone"><zone id="zone0"></zone></div>
+            <client-full-time></client-full-time>
+        </div>
+        <tab-dir></tab-dir>
+        <div class="typicalZone drag-zone"><zone id="zone1"></zone></div>
+        <div class="typicalZone drag-zone"><zone id="zone2"></zone></div>
+        <div class="typicalZone drag-zone"><zone id="zone3"></zone></div>
+    </div>
+    <div class="right_Filter">
+        <div class="colorSample"><zone id="zone4"></zone></div>
+    </div>
+    <div class="bottom_Tools">
+            <span class="bottom_icon">
+                <img src="/images/ico_persontip.png" />
+            </span>
+        <div class="bottom_Positon" ng-bind="coordinates"></div>
+        <div class="typicalZone drag-zone"><zone id="zone5"></zone></div>
+        <div class="bootom_SwitchMap">
+            <label><input type="radio" checked name="basemap" ng-click="switchBaseMap('default')">默认</label>
+            <label><input type="radio" name="basemap" ng-click="switchBaseMap('satellite')">topo</label>
+            <label><input type="radio" name="basemap" ng-click="switchBaseMap('gray')">灰色</label>
+            <label><input type="radio" name="basemap" ng-click="switchBaseMap('streets')">街道</label>
+            <label><input type="radio" name="basemap" ng-click="switchBaseMap('topo')">topo</label>
+        </div>
+    </div>
+</div>

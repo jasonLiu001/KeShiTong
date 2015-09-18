@@ -1,0 +1,991 @@
+{
+  "scenario": [
+    {
+      "id": "water_scenario",
+      "title": "水体质量监测",
+      "icon": "../../images/protection_water.png",
+      "templateUrl": "/js/templates/layouts/layout1.html",
+      "dataSource": "55f16d019254244c2330bb2d",
+      "dataIndex": "water",
+      "theme": "theme1",
+      "zones": [
+        {
+          "id": "zone0",
+          "control": {
+            "name": "layout-title",
+            "model": {
+              "title": "环保大数据可视化",
+              "des": "",
+              "sheet": "监测点",
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          }
+        },
+        {
+          "id": "zone1",
+          "control": {
+            "name": "rose-chart",
+            "model": {
+              "title": "地表水质状况",
+              "des": "rose des",
+              "sheet": "监测点",
+              "dataColumn": "水质类别",
+              "config": [
+                {
+                  "name": "优",
+                  "value": "1",
+                  "color": "#0000FE"
+                },
+                {
+                  "name": "良",
+                  "value": "2",
+                  "color": "#008001"
+                },
+                {
+                  "name": "轻度污染",
+                  "value": "3",
+                  "color": "#FFFF01"
+                },
+                {
+                  "name": "中度污染",
+                  "value": "4",
+                  "color": "#FEA501"
+                },
+                {
+                  "name": "重度污染",
+                  "value": "5",
+                  "color": "#FE0000"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "zone2",
+          "control": {
+            "name": "table-chart",
+            "model": {
+              "title": "废水污染源企业排污总量排名",
+              "des": "rose des",
+              "sheet": "污染企业",
+              "icon": "/images/ico_airwarning.png",
+              "groupByColumn": {
+                "name": "企业名称",
+                "title": "公司名称"
+              },
+              "limit": 5,
+              "columns": [
+                {
+                  "title": "COD(t)",
+                  "name": "COD总量",
+                  "weight": 0.95
+                },
+                {
+                  "title": "氨氮(t)",
+                  "name": "氨氮总量",
+                  "weight": 0.95
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "zone3",
+          "control": {
+            "name": "bar-chart",
+            "model": {
+              "title": "各监测点数据对比",
+              "des": "bar des",
+              "sheet": "监测点",
+              "xAxisColName":"名称",
+              "defaultShownColName":"高锰酸盐指数",
+              "config": [
+                {
+                  "columnName": "高锰酸盐指数",
+                  "DisplayName": "高锰酸盐",
+                  "standerValue": "4",
+                  "maxValue":"6"
+                },
+                {
+                  "columnName": "电导率",
+                  "DisplayName": "电导率",
+                  "standerValue": "9",
+                  "maxValue":"12"
+                },
+                {
+                  "columnName": "溶解氧",
+                  "DisplayName": "溶解氧",
+                  "standerValue": "2",
+                  "maxValue":"4"
+                },
+                {
+                  "columnName": "氨氮",
+                  "DisplayName": "氨氮",
+                  "standerValue": "0.8",
+                  "maxValue":"1.2"
+                },
+                {
+                  "columnName": "PH",
+                  "DisplayName": "PH",
+                  "standerValue": "7",
+                  "maxValue":"12"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "zone4",
+          "control": {
+            "name": "legend-chart",
+            "model": {
+              "title": "图例",
+              "sheet": "监测点",
+              "des": "bar des",
+              "legend": "legend2",
+              "levels": [
+                {
+                  "color": "#0000FE",
+                  "text": "I-优"
+                },
+                {
+                  "color": "#0000FE",
+                  "text": "II-优"
+                },
+                {
+                  "color": "#008001",
+                  "text": "III-良好"
+                },
+                {
+                  "color": "#FDFF00",
+                  "text": "IV-轻度污染"
+                },
+                {
+                  "color": "#FEA500",
+                  "text": "V-中度污染"
+                },
+                {
+                  "color": "#FE0001",
+                  "text": "劣V-重度污染"
+                },
+                {
+                  "color": "#3A3F44",
+                  "text": "排污企业"
+                }
+              ]
+            }
+          }
+        },
+        {"id":"zone5",
+          "control":{
+            "name": "time-line",
+            "model": {
+              "title": "时间线",
+              "sheet": "监测点",
+              "dateType":"天"
+            }
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "title": "部件居左",
+          "icon": "../../images/left_bar.png",
+          "templateUrl": "/js/templates/layouts/layout1.html"
+        },
+        {
+          "title": "部件居右",
+          "icon": "../../images/right_bar.png",
+          "templateUrl": "/js/templates/layouts/layout2.html"
+        }
+      ]
+    },
+    {
+      "id": "air_scenario",
+      "title": "空气质量监测",
+      "icon": "../../images/protection_air.png",
+      "templateUrl": "/js/templates/layouts/layout1.html",
+      "dataSource": "55f16d019254244c2330bb2d",
+      "dataIndex": "air",
+      "theme": "theme1",
+      "zones": [
+        {
+          "id": "zone0",
+          "control": {
+            "name": "layout-title",
+            "model": {
+              "title": "环保大数据可视化",
+              "des": "",
+              "sheet": "监测点",
+              "fontSize": 24,
+              "color": "#fff"
+            }
+          }
+        },
+        {
+          "id": "zone1",
+          "control": {
+            "name": "blocks-chart",
+            "model": {
+              "title": "实时空气质量指数",
+              "des": "rose des",
+              "sheet": "监测点",
+              "legendColors": [
+                {
+                  "color": "#00E401"
+                },
+                {
+                  "color": "#FFFF02"
+                },
+                {
+                  "color": "#FE7E00"
+                },
+                {
+                  "color": "#FE0000"
+                },
+                {
+                  "color": "#99014B"
+                },
+                {
+                  "color": "#7E0123"
+                }
+              ],
+              "columns": [
+                {
+                  "name": "PM10",
+                  "title": "PM10",
+                  "levels": [
+                    {
+                      "min": 0,
+                      "max": "50"
+                    },
+                    {
+                      "min": "50",
+                      "max": "100"
+                    },
+                    {
+                      "min": "100",
+                      "max": "150"
+                    },
+                    {
+                      "min": "150",
+                      "max": "200"
+                    },
+                    {
+                      "min": "200",
+                      "max": "250"
+                    },
+                    {
+                      "min": "250",
+                      "max": "99999"
+                    }
+                  ]
+                },
+                {
+                  "name": "PM2.5",
+                  "title": "PM2.5",
+                  "levels": [
+                    {
+                      "min": 0,
+                      "max": "50"
+                    },
+                    {
+                      "min": "50",
+                      "max": "100"
+                    },
+                    {
+                      "min": "100",
+                      "max": "150"
+                    },
+                    {
+                      "min": "150",
+                      "max": "200"
+                    },
+                    {
+                      "min": "200",
+                      "max": "250"
+                    },
+                    {
+                      "min": "250",
+                      "max": "99999"
+                    }
+                  ]
+                },
+                {
+                  "name": "SO2",
+                  "title": "SO2",
+                  "levels": [
+                    {
+                      "min": 0,
+                      "max": 50
+                    },
+                    {
+                      "min": 50,
+                      "max": 100
+                    },
+                    {
+                      "min": 101,
+                      "max": 150
+                    },
+                    {
+                      "min": 151,
+                      "max": 200
+                    },
+                    {
+                      "min": 201,
+                      "max": 250
+                    },
+                    {
+                      "min": 251,
+                      "max": 300
+                    }
+                  ]
+                },
+                {
+                  "name": "NOX",
+                  "title": "NO2",
+                  "levels": [
+                    {
+                      "min": 0,
+                      "max": "0.2"
+                    },
+                    {
+                      "min": 0.2,
+                      "max": "0.4"
+                    },
+                    {
+                      "min": "0.4",
+                      "max": "0.6"
+                    },
+                    {
+                      "min": 0.6,
+                      "max": "0.8"
+                    },
+                    {
+                      "min": 0.8,
+                      "max": "1.0"
+                    },
+                    {
+                      "min": "1.0",
+                      "max": "1.2"
+                    }
+                  ]
+                },
+                {
+                  "name": "CO",
+                  "title": "CO",
+                  "levels": [
+                    {
+                      "min": 0,
+                      "max": "0.2"
+                    },
+                    {
+                      "min": "0.2",
+                      "max": "0.4"
+                    },
+                    {
+                      "min": "0.4",
+                      "max": "0.6"
+                    },
+                    {
+                      "min": "0.6",
+                      "max": "0.8"
+                    },
+                    {
+                      "min": "0.8",
+                      "max": "1.0"
+                    },
+                    {
+                      "min": "1.0",
+                      "max": "1.2"
+                    }
+                  ]
+                }
+              ],
+              "groupBy": "AQI"
+            }
+          }
+        },
+        {
+          "id": "zone2",
+          "control": {
+            "name": "table-chart",
+            "model": {
+              "title": "大气污染源企业排污总量排名",
+              "des": "rose des",
+              "sheet": "污染企业",
+              "icon": "/images/ico_airwarning.png",
+              "groupByColumn": {
+                "name": "企业名称",
+                "title": "公司名称"
+              },
+              "limit": 5,
+              "columns": [
+                {
+                  "name": "SO2总量",
+                  "title": "SO2",
+                  "weight": 0.95
+                },
+                {
+                  "name": "NOx总量",
+                  "title": "NOx",
+                  "weight": 0.95
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "zone3",
+          "control": {
+            "name": "water-progress-chart",
+            "model": {
+              "title": "区域空气质量排名",
+              "des": "bar des",
+              "sheet": "监测点",
+              "dataColumn": "AQI",
+              "unitColumn": "名称",
+              "rangeConfig": [
+                {
+                  "id": "1",
+                  "name": "优",
+                  "color": "#00E401",
+                  "min": "0",
+                  "max": "50"
+                },
+                {
+                  "id": "2",
+                  "name": "良",
+                  "color": "#FFFF02",
+                  "min": "50",
+                  "max": "100"
+                },
+                {
+                  "id": "3",
+                  "name": "轻度污染",
+                  "color": "#FE7E00",
+                  "min": "100",
+                  "max": "150"
+                },
+                {
+                  "id": "4",
+                  "name": "中度污染",
+                  "color": "#FE0000",
+                  "min": "150",
+                  "max": "200"
+                },
+                {
+                  "id": "5",
+                  "name": "重度污染",
+                  "color": "#99014B",
+                  "min": "200",
+                  "max": "999999"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "zone4",
+          "control": {
+            "name": "legend-chart",
+            "model": {
+              "title": "图例",
+              "des": "bar des",
+              "legend": "legend2",
+              "sheet": "监测点",
+              "levels": [
+                {
+                  "color": "#00E401",
+                  "text": "一级-优（0-50）"
+                },
+                {
+                  "color": "#FFFF02",
+                  "text": "二级-良（51-100）"
+                },
+                {
+                  "color": "#FE7E00",
+                  "text": "三级-轻度污染（101-150）"
+                },
+                {
+                  "color": "#FE0000",
+                  "text": "四级-中度污染（151-200）"
+                },
+                {
+                  "color": "#99014B",
+                  "text": "五级-重度污染（201-300）"
+                },
+                {
+                  "color": "#7E0123",
+                  "text": "六级-严重污染（>300）"
+                },
+                {
+                  "color": "#3A3F45",
+                  "text": "排污企业"
+                }
+              ]
+            }
+          }
+        },{"id":"zone5",
+          "control":{
+            "name": "time-line",
+            "model": {
+              "title": "时间线",
+              "sheet": "监测点",
+              "dateType":"天"
+            }
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "title": "部件居左",
+          "icon": "../../images/left_bar.png",
+          "templateUrl": "/js/templates/layouts/layout1.html"
+        },
+        {
+          "title": "部件居右",
+          "icon": "../../images/right_bar.png",
+          "templateUrl": "/js/templates/layouts/layout2.html"
+        }
+      ]
+    }
+  ],
+  "dataSource": [
+    {
+      "id": "55f16d019254244c2330bb2d",
+      "title": "示例数据",
+      "icon": ""
+    }
+  ],
+  "theme": [
+    {
+      "title": "theme1",
+      "icon": "../../images/theme1.png",
+      "css": "/css/themes/theme_main.css"
+    },
+    {
+      "title": "theme2",
+      "icon": "../../images/theme2.png",
+      "css": "/css/themes/theme_1.css"
+    }
+  ],
+  "currentScenario": "air_scenario",
+  "controls": [
+    {
+      "title": "图表控件",
+      "id": "chart1",
+      "controls": [
+        {
+          "title": "玫瑰图",
+          "name": "rose-chart",
+          "icon": "../../images/thumbnail_rose.png",
+          "model": {
+            "title": "地表水质状况",
+            "des": "rose des",
+            "sheet": "监测点",
+            "dataColumn": "水质类别",
+            "config": [
+              {
+                "name": "优",
+                "value": "1",
+                "color": "#0000FE"
+              },
+              {
+                "name": "良",
+                "value": "2",
+                "color": "#008001"
+              },
+              {
+                "name": "轻度污染",
+                "value": "3",
+                "color": "#FFFF01"
+              },
+              {
+                "name": "中度污染",
+                "value": "4",
+                "color": "#FEA501"
+              },
+              {
+                "name": "重度污染",
+                "value": "5",
+                "color": "#FE0000"
+              }
+            ]
+          }
+        },
+        {
+          "title": "块状图",
+          "name": "blocks-chart",
+          "icon": "../../images/thumbnail_blocks.png",
+          "model": {
+            "title": "实时空气质量指数",
+            "des": "rose des",
+            "sheet": "监测点",
+            "legendColors": [
+              {
+                "color": "#00E401"
+              },
+              {
+                "color": "#FFFF02"
+              },
+              {
+                "color": "#FE7E00"
+              },
+              {
+                "color": "#FE0000"
+              },
+              {
+                "color": "#99014B"
+              },
+              {
+                "color": "#7E0123"
+              }
+            ],
+            "columns": [
+              {
+                "name": "PM10",
+                "title": "PM10",
+                "levels": [
+                  {
+                    "min": 0,
+                    "max": "50"
+                  },
+                  {
+                    "min": "50",
+                    "max": "100"
+                  },
+                  {
+                    "min": "100",
+                    "max": "150"
+                  },
+                  {
+                    "min": "150",
+                    "max": "200"
+                  },
+                  {
+                    "min": "200",
+                    "max": "250"
+                  },
+                  {
+                    "min": "250",
+                    "max": "99999"
+                  }
+                ]
+              },
+              {
+                "name": "PM2.5",
+                "title": "PM2.5",
+                "levels": [
+                  {
+                    "min": 0,
+                    "max": "50"
+                  },
+                  {
+                    "min": "50",
+                    "max": "100"
+                  },
+                  {
+                    "min": "100",
+                    "max": "150"
+                  },
+                  {
+                    "min": "150",
+                    "max": "200"
+                  },
+                  {
+                    "min": "200",
+                    "max": "250"
+                  },
+                  {
+                    "min": "250",
+                    "max": "99999"
+                  }
+                ]
+              },
+              {
+                "name": "SO2",
+                "title": "SO2",
+                "levels": [
+                  {
+                    "min": 0,
+                    "max": 50
+                  },
+                  {
+                    "min": 50,
+                    "max": 100
+                  },
+                  {
+                    "min": 101,
+                    "max": 150
+                  },
+                  {
+                    "min": 151,
+                    "max": 200
+                  },
+                  {
+                    "min": 201,
+                    "max": 250
+                  },
+                  {
+                    "min": 251,
+                    "max": 300
+                  }
+                ]
+              },
+              {
+                "name": "NOX",
+                "title": "NO2",
+                "levels": [
+                  {
+                    "min": 0,
+                    "max": "0.2"
+                  },
+                  {
+                    "min": 0.2,
+                    "max": "0.4"
+                  },
+                  {
+                    "min": "0.4",
+                    "max": "0.6"
+                  },
+                  {
+                    "min": 0.6,
+                    "max": "0.8"
+                  },
+                  {
+                    "min": 0.8,
+                    "max": "1.0"
+                  },
+                  {
+                    "min": "1.0",
+                    "max": "1.2"
+                  }
+                ]
+              },
+              {
+                "name": "CO",
+                "title": "CO",
+                "levels": [
+                  {
+                    "min": 0,
+                    "max": "0.2"
+                  },
+                  {
+                    "min": "0.2",
+                    "max": "0.4"
+                  },
+                  {
+                    "min": "0.4",
+                    "max": "0.6"
+                  },
+                  {
+                    "min": "0.6",
+                    "max": "0.8"
+                  },
+                  {
+                    "min": "0.8",
+                    "max": "1.0"
+                  },
+                  {
+                    "min": "1.0",
+                    "max": "1.2"
+                  }
+                ]
+              }
+            ],
+            "groupBy": "AQI"
+          }
+        },
+        {
+          "title": "柱状图",
+          "name": "bar-chart",
+          "sheet": "监测点",
+          "icon": "../../images/thumbnail_bar.png",
+          "model": {
+            "title": "各监测点数据对比",
+            "des": "bar des",
+            "sheet": "监测点",
+            "xAxisColName":"名称",
+            "defaultShownColName":"高锰酸盐指数",
+            "config": [
+              {
+                "columnName": "高锰酸盐指数",
+                "DisplayName": "高锰酸盐",
+                "standerValue": "4",
+                "maxValue":"6"
+              },
+              {
+                "columnName": "电导率",
+                "DisplayName": "电导率",
+                "standerValue": "9",
+                "maxValue":"12"
+              },
+              {
+                "columnName": "溶解氧",
+                "DisplayName": "溶解氧",
+                "standerValue": "2",
+                "maxValue":"4"
+              },
+              {
+                "columnName": "氨氮",
+                "DisplayName": "氨氮",
+                "standerValue": "0.8",
+                "maxValue":"1.2"
+              },
+              {
+                "columnName": "PH",
+                "DisplayName": "PH",
+                "standerValue": "7",
+                "maxValue":"12"
+              }
+            ]
+          }
+        },
+        {
+          "title": "排名图",
+          "name": "table-chart",
+          "icon": "../../images/thumbnail_sort.png",
+          "model": {
+            "title": "废水污染源企业排污总量排名",
+            "des": "rose des",
+            "sheet": "污染企业",
+            "icon": "/images/ico_airwarning.png",
+            "groupByColumn": {
+              "name": "企业名称",
+              "title": "公司名称"
+            },
+            "limit": 5,
+            "columns": [
+              {
+                "title": "COD(t)",
+                "name": "COD总量",
+                "weight": 0.95
+              },
+              {
+                "title": "氨氮(t)",
+                "name": "氨氮总量",
+                "weight": 0.95
+              }
+            ]
+          }
+        },
+        {
+          "title": "状态图",
+          "name": "water-progress-chart",
+          "icon": "../../images/thumbnail_status.png",
+          "model": {
+            "title": "区域空气质量排名",
+            "des": "bar des",
+            "sheet": "监测点",
+            "dataColumn": "AQI",
+            "unitColumn": "名称",
+            "rangeConfig": [
+              {
+                "id": "1",
+                "name": "优",
+                "color": "#00E401",
+                "min": "0",
+                "max": "50"
+              },
+              {
+                "id": "2",
+                "name": "良",
+                "color": "#FFFF02",
+                "min": "50",
+                "max": "100"
+              },
+              {
+                "id": "3",
+                "name": "轻度污染",
+                "color": "#FE7E00",
+                "min": "100",
+                "max": "150"
+              },
+              {
+                "id": "4",
+                "name": "中度污染",
+                "color": "#FE0000",
+                "min": "150",
+                "max": "200"
+              },
+              {
+                "id": "5",
+                "name": "重度污染",
+                "color": "#99014B",
+                "min": "200",
+                "max": "999999"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "图例控件",
+      "id": "chart2",
+      "controls": [
+        {
+          "title": "示例图控件",
+          "icon": "../../images/thumbnail_steps.png",
+          "name": "legend-chart",
+          "model": {
+            "title": "图例",
+            "sheet": "监测点",
+            "des": "bar des",
+            "legend": "legend2",
+            "levels": [
+              {
+                "color": "#0000FE",
+                "text": "I-优"
+              },
+              {
+                "color": "#0000FE",
+                "text": "II-优"
+              },
+              {
+                "color": "#008001",
+                "text": "III-良好"
+              },
+              {
+                "color": "#FDFF00",
+                "text": "IV-轻度污染"
+              },
+              {
+                "color": "#FEA500",
+                "text": "V-中度污染"
+              },
+              {
+                "color": "#FE0001",
+                "text": "劣V-重度污染"
+              },
+              {
+                "color": "#3A3F44",
+                "text": "排污企业"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "文字控件",
+      "id": "chart3",
+      "controls": [
+        {
+          "title": "标题控件",
+          "name": "layout-title",
+          "icon": "../../images/thumbnail_text.png",
+          "model": {
+            "title": "环保大数据可视化",
+            "sheet": "监测点",
+            "des": "系统标题控件",
+            "fontSize": 24,
+            "color": "#fff"
+          }
+        }
+      ]
+    }
+  ]
+}

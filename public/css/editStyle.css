@@ -1,0 +1,17 @@
+/* Styles for zone */
+.typicalZone{width:363px; min-height: 180px; border:1px dashed #FF00FF;}
+.typicalZone .zoneContent{width:363px; min-height: 180px; }
+.titleZone{width: 363px; min-height: 23px;border:1px dashed #FF00FF;}
+.titleZone .zoneContent{width: 363px; min-height: 23px;border:1px dashed #FF00FF;}
+.colorSample{min-width: 148px; min-height: 177px;border:1px dashed #FF00FF;}
+.colorSample .zoneContent{min-width: 148px; min-height: 177px;border:1px dashed #FF00FF;}
+/* End of styles for zone */
+/* ʯ��ׯ�����༭״̬ */
+/*��opacity С��1��Bootstrap�������ܵ�Ӱ��*/
+.right_Filter{
+    opacity:1 !important;
+}
+.left_Content {
+   opacity: 1 !important;
+}
+/* ʯ��ׯ�����༭״̬ */

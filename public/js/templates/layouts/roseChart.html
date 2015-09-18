@@ -1,0 +1,12 @@
+﻿<div class="editPropertyPanel">
+    <span>Rose控件标题：</span>
+    <input type="text" value="" ng-model="properties.title"/>
+
+    <div class="ui-colors">
+        <span>配置颜色：</span>
+        <div ng-repeat="cfg in properties.config" >
+            <span ng-bind="cfg.name"></span>
+            <input type="text" ng-model="cfg.color" />
+        </div>
+    </div>
+</div>

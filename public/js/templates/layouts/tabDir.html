@@ -1,0 +1,10 @@
+<div>
+    <div style="width: 100%; text-align: center;">
+        <ul class="pType">
+            <li ng-repeat="item in tabsData" ng-click="changeTab(item.id)" ng-class="{'curr':tabsCurrId==item.id}">
+                {{item.title}}
+            </li>
+        </ul>
+    </div>
+ 
+</div>

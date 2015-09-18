@@ -1,0 +1,111 @@
+﻿
+.left_Content {
+    opacity: 0.95;
+    background-color: #f4f5f7;
+    border: solid 1px #ffffff;
+}
+
+    .left_Content .top_Content {
+        background-color: #373e44;
+    }
+
+
+
+        .left_Content .top_Content .title {
+            color: #fdfdfd;
+            text-shadow: #000 0 2px 0;
+        }
+
+        .left_Content .top_Content .text {
+            color: #858C96;
+        }
+
+        .left_Content .top_Content .val {
+            color: #4666c9;
+        }
+
+
+    .left_Content .info_Content .info_Title {
+        background-image: url('../../images/lefttitlebg.png');
+    }
+
+ul.c-levels li {
+    border: 1px solid #ccc;
+}
+
+.c-title li {
+    border-top: 1px solid #ccc;
+    color: #505050;
+}
+
+.c-selected:before {
+    background-image: url(../../Images/ico_blackarrow.png);
+}
+
+.water-progress-chart li > div {
+    background: linear-gradient(left, #00E401, #FFFF02, #FE7E00, #FE0000, #99014B,#7E0123);
+    background: -webkit-linear-gradient(left, #00E401, #FFFF02, #FE7E00, #FE0000, #99014B,#7E0123);
+    background: -ms-linear-gradient(left, #00E401, #FFFF02, #FE7E00, #FE0000, #99014B,#7E0123);
+    background: -o-linear-gradient(left, #00E401, #FFFF02, #FE7E00, #FE0000, #99014B,#7E0123);
+    background: -moz-linear-gradient(left, #00E401, #FFFF02, #FE7E00, #FE0000, #99014B,#7E0123);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4666C9', endColorstr='#F7412C', GradientType=1); /*IE<9>*/
+}
+
+/*for bottom bg*/
+.bottom_Tools {
+    border-top: solid 1px #ffffff;
+    background-color: #e5e6eb;
+    opacity: 0.8;
+}
+
+    .bottom_Tools .bottom_Time {
+        background-color: #373f42;
+    }
+
+    .bottom_Tools .bottom_Positon {
+        color: #4864cf;
+    }
+
+    .bottom_Tools .bottom_Time .switch_Time ul li {
+        color: #fff;
+        background-image: url('../line.svg');
+    }
+
+    .bottom_Tools .bottom_Time .move_Stop {
+        background-image: url(../../images/ico_play.png);
+    }
+
+    .bottom_Tools .bottom_Time .move_Auto {
+        background-image: url(../../images/ico_pause.png);
+    }
+/*for the right pop*/
+.right_Filter {
+    background-color: #e5e6eb;
+    border: solid 1px #ffffff;
+    opacity: 0.8;
+}
+
+    .right_Filter select {
+        background-color: #3a3f45;
+        color: #ffffff;
+    }
+
+    .right_Filter ul li.l5:before {
+        background-color: #f6412c;
+    }
+
+    .right_Filter ul li.l4:before {
+        background-color: #ff7e7e;
+    }
+
+    .right_Filter ul li.l3:before {
+        background-color: #b9ccf7;
+    }
+
+    .right_Filter ul li.l2:before {
+        background-color: #789eef;
+    }
+
+    .right_Filter ul li.l1:before {
+        background-color: #4666c9;
+    }

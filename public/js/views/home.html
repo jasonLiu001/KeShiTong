@@ -1,0 +1,106 @@
+﻿<div class="container-fluid" id="mainContainer">
+    <div class="row header">
+        <div class="col-md-8">
+            <div class="innerContainer">
+                <div id="logo">
+                    <img src="images/logo.png" alt="" />
+                </div>
+                <span class="editerTitle">可视化系统编辑器</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="innerContainer">
+                <div id="userContainer">
+                    <span ng-bind="model.email"></span>
+                    <a class="logout" href="javascript:;" ng-click="logout()"><i class="fa fa-power-off"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <table width="100%" height="{{clientHeight}}">
+            <tr>
+                <td style="width: 300px;" valign="top">
+                    <div id="editHistory">
+                        <h3>最近编辑的系统</h3>
+                        <hr />
+                        <div id="historyContainer">
+                            <!--<div class="hisItem" ng-repeat="item in userLatestEdits">{{item.title}}</div>-->
+                            <ul>
+                                <li class="hisItem" ng-repeat="item in userLatestEdits">
+                                    <a href="#/editor/{{item.id}}/design">
+                                        <img src="/images/huanbao.jpg">
+                                    </a>
+                                    <span ng-bind="item.title"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div id="mainPanel">
+                        <ul id="homeTopTabs" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">新建可视化系统</a></li>
+                            <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">已保存的可视化系统</a></li>
+                            <li role="presentation"><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab">已发布的可视化系统</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="tab1">
+                                <ul>
+                                    <li class="templateItem" ng-repeat="item in sysTemplates">
+                                        <a data-toggle="modal" href="#" data-target="#{{item.id}}" ng-click="createTemplate()">
+                                            <img src="/images/huanbao.jpg">
+                                        </a>
+                                        <span ng-bind="item.title"></span>
+                                        <!--<div class="modal fade" id="{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+                                            <!--<div class="modal-dialog" role="document">-->
+                                                <!--<div class="modal-content">-->
+                                                    <!--<div class="modal-header">-->
+                                                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                                        <!--<h4 class="modal-title" id="H1">请输入新建系统名称</h4>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="modal-body">-->
+                                                        <!--系统名称：<br/>-->
+                                                        <!--<input type="text" id = "userVSystemName" ng-model="userTemplateName" />-->
+                                                    <!--</div>-->
+                                                    <!--<div class="modal-footer">-->
+                                                        <!--<button type="button"  class="btn btn-default" data-dismiss="modal">取消</button>-->
+                                                        <!--<button type="button" ng-click="createUserTemplate(item.id, userTemplateName)"   class="btn btn-default" data-dismiss="modal">创建</button>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab2">
+                                <ul>
+                                    <li class="saveItem" ng-repeat="item in userUnpubs">
+                                        <a href="#/editor/{{item.id}}/design">
+                                            <img src="/images/huanbao.jpg">
+                                        </a>
+                                        <span ng-bind = "item.title"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab3">
+                                <ul>
+                                    <li class="pubItem"  ng-repeat="item in userPubs">
+                                        <a href="#/preview/{{item.id}}" >
+                                            <img src="/images/huanbao.jpg">
+                                        </a>
+                                        <span ng-bind = "item.title"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row footer">
+        <p>Copyright</p>
+    </div>
+</div>

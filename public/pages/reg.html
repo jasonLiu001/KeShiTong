@@ -1,0 +1,329 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>可视通</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/swiper.min.css" type="text/css" rel="stylesheet">
+    <link href="css/com.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <style>
+        input[type=radio]{
+            width: 20px!important; height: 20px!important;margin-top:10px; float: left;
+        }
+        label.form-sex{margin-top:10px; float: left; color: #2d2d2d; margin-right: 20px;}
+        .reg_login{margin: 0px auto;}
+    </style>
+</head>
+<body>
+<div class="top">
+    <!-- nav start -->
+    <div class="nav" style="position: fixed; top: 0px;">
+        <div class="nav-inner">
+            <a class="logo f_l" href="#">
+                <img src="images/logo.png" alt="可视通">
+            </a>
+            <div class="nav-list f_r">
+                <h2><a href="#" class="active">首页</a></h2>
+                <h2>
+                    <a href="#">产品</a>
+                    <ul>
+                        <i></i>
+                        <li><a href="#">功能介绍</a></li>
+                        <li><a href="#">微商云套餐</a></li>
+                    </ul>
+                </h2>
+                <h2>
+                    <a href="#">案例</a>
+
+                </h2>
+                <h2>
+                    <a href="#">文档</a>
+
+                </h2>
+                <h2><a href="#">关于</a></h2>
+                    <span>
+                        <a href="reg.html" class="sqty">注册</a>
+                        <a href="javascript:void(0)" target="_blank" id="login-index">登录</a>&nbsp;
+
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="ding" id="ding"></div>
+</div>
+
+
+<div class="reg_login">
+    <h2>注册</h2>
+        <div class="wsy-reg-div">
+            <div id="error-message" class="error-message"></div>
+            <ul>
+                <li class="input_text">
+                    <label for="err_emailID" class="login_pad">
+                        <span class="zi">邮箱</span>
+                        <span class="xing">*</span>
+                    </label>
+                    <input type="text" name="emailID" id="err_emailID" class="text">
+                    <span class="gray">邮箱将与支付及优惠相关，请填写正确的邮箱</span>
+                </li>
+                <li>
+                    <label for="err_userName" class="login_pad">
+                        <span class="zi">姓名</span><span class="xing">*</span>
+                    </label>
+                    <input type="text" name="userName" id="err_userName" class="text">
+                    <span class="gray">长度为2-4个字符</span>
+                </li>
+                <li>
+                    <label for="err_password" class="login_pad">
+                        <span class="zi">性别</span><span class="xing">*</span>
+                    </label>
+                    <input type="radio" name="sex" class="text" checked="checked" value="1"> <label class="form-sex">男</label>
+                    <input type="radio" name="sex" class="text" value="0"> <label class="form-sex">女</label>
+                </li>
+                <li>
+                    <label for="err_company" class="login_pad">
+                        <span class="zi">公司名称</span><span class="xing">*</span>
+                    </label>
+                    <input type="text" name="company" id="err_company" class="text">
+                    <span class="gray">长度为2-20个字符</span>
+                </li>
+                <li>
+                    <label for="err_post" class="login_pad">
+                        <span class="zi">职位</span><span class="xing">*</span>
+                    </label>
+                    <input type="text" name="post" id="err_post" class="text">
+                    <span class="gray">长度为2-10个字符</span>
+                </li>
+                <li>
+                    <label for="err_trade" class="login_pad">
+                        <span class="zi">行业</span><span class="xing">*</span>
+                    </label>
+                    <input type="text" name="trade" id="err_trade" class="text">
+                    <span class="gray">长度为2-10个字符</span>
+                </li>
+                <li>
+                    <label for="err_telphone" class="login_pad">
+                        <span class="zi">联系电话</span><span class="xing">*</span>
+                    </label>
+                    <input type="text" name="telphone" id="err_telphone" class="text">
+                    <span class="gray">长度为11个字符</span>
+                </li>
+                <li class="input_text">
+                    <label for="err_password" class="login_pad">
+                        <span class="zi">密码</span><span class="xing">*</span>
+                    </label>
+                    <input type="password" name="password" id="err_password" class="text">
+                    <span class="gray">长度为6~16个字符</span>
+                </li>
+                <li class="input_text">
+                    <label for="err_repassword" class="login_pad">密码重复</label>
+                    <input type="password" name="repassword" id="err_repassword" class="text">
+                </li>
+
+                <li>
+                    <label class="login_pad">&nbsp;</label>
+                    <input type="button" id="reg" name="reg" style="background-image: url(images/reg.png); width: 220px; height: 40px; border: none;">
+                </li>
+            </ul>
+        </div>
+</div>
+<div id="loginBox">
+    <div class="login-panel">
+        <h3>登录</h3>
+        <div class="login-mod">
+            <ul>
+                <li class="input_text">
+                    <label for="emailID" class="login_pad">用户名</label>
+                    <input class="text" id="emailID" name="username" placeholder="用户名" onfocus="this.type='text'">
+                </li>
+                <li class="input_text pwd">
+                    <label for="passwordStr" class="login_pwd">密码</label>
+                    <input class="text" id="passwordStr" name="password" placeholder="密码" onfocus="this.type='password'">
+                </li>
+                <li>
+                        <span>
+                         <input class="btn" type="button" id="login" style="background-image:url(images/index-login-btn.png); width: 293px; height:38px;s ">
+                        </span>
+                </li>
+            </ul>
+            <!--<a href="/index.html?g=Home&amp;m=Index&amp;a=forgetpwdbyemail">忘记密码找回</a>-->
+        </div>
+    </div>
+    <div class="login-cover"></div>
+</div>
+<script type="text/javascript">
+
+    $('#reg').click(function () {
+
+        var model = {
+            emailID: $("#err_emailID").val().trim(),
+            userName: $("#err_userName").val().trim(),
+            password: $("#err_password").val().trim(),
+            sex: $("input[type=radio][name=sex][checked=checked]").val().trim(),
+            post: $("#err_post").val().trim(),
+            company: $("#err_company").val().trim(),
+            trade : $("#err_trade").val().trim(),
+            telphone : $("#err_telphone").val().trim(),
+            confirmPassWord: $("#err_repassword").val().trim()
+        }
+        var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+        var regmobile = /^[1][3587]\d{9}$/;
+
+        function testLength(value,min,max){
+            return  value.length < min || value.length > max;
+        }
+
+        var errorMsg = $("#error-message");
+        if(!regEmail.test(model.emailID)){
+            errorMsg.text("请填写有效的邮箱地址！");
+            return;
+        }
+
+        if (testLength(model.userName, 2 ,10)) {
+            errorMsg.text("用户姓名不正确！");
+            return;
+        }
+        if (testLength(model.company, 2 ,20)) {
+            errorMsg.text("公司名称不正确！");
+            return;
+        }
+        if (testLength(model.post, 2 ,4)) {
+            errorMsg.text("职位不正确！");
+            return;
+        }
+
+        if (testLength(model.trade, 2 ,10)) {
+            errorMsg.text("行业不正确！");
+            return;
+        }
+
+        if(!regmobile.test(model.telphone)){
+            errorMsg.text("手机号填写不对！");
+            return;
+        }
+
+        if (testLength(model.password, 6 ,16)) {
+            errorMsg.text("密码不符合规范！");
+            return;
+        }
+        if (model.password != model.confirmPassWord) {
+            errorMsg.text("两次密码输入不一致！");
+            return;
+        }
+
+
+        function reg(loginCallback){
+            $.ajax({
+                url:'/api/account/register',
+                type:'post',
+                data: model,
+                success: function (data) {
+                    if (data.status == 200 && data.data) {
+                        loginCallback({
+                            emailID: model.emailID,
+                            passwordStr : model.password
+                        });
+                    } else {
+                        alert(data.message);
+                    }
+                },error:function(){
+                    alert('error');
+                }
+            });
+        }
+
+        reg(function(data){
+            $.ajax({
+                url:'/api/account/login',
+                type:'post',
+                data: data,
+                success: function (data) {
+                    if (data.status == 200 && data.data) {
+                        window.localStorage['user'] = JSON.stringify(data.data);
+                        window.location.href = '/index.html';
+                    } else {
+                        alert(data.message);
+                    }
+                },error:function(){
+                    alert('error');
+                }
+            });
+
+        });
+
+
+
+    });
+
+    $("#login-index").click(function(){
+        $("#loginBox").addClass("on1");
+        return false;
+    });
+
+    $(".login-cover").click(function(){
+        $("#loginBox").removeClass("on1");
+    });
+
+
+    $('#login').click(function () {
+        var model = {
+            emailID: $('#emailID').val().trim(),
+            passwordStr : $('#passwordStr').val().trim()
+        };
+
+        $.ajax({
+            url:'/api/account/login',
+            type:'post',
+            data: model,
+            success: function (data) {
+                if (data.status == 200 && data.data) {
+                    window.localStorage['user'] = JSON.stringify(data.data);
+                    window.location.href = '/index.html#/home';
+                } else {
+                    alert(data.message);
+                }
+            },error:function(){
+                alert('error');
+            }
+        });
+    })
+</script>
+
+
+<div style=" border-bottom:2px solid #f4f4f4"></div>
+<div class="footer-line"></div>
+
+<div id="footer">
+    <div class="ditop">
+        <div class="di-le-logo">可视通</div>
+        <div class="di-zi-new" style="width: 70px;"><div class="name">首页</div><a href="#">首页</a></div>
+        <div class="di-zi-new">
+            <div class="name">产品</div>
+            <a href="#">产品介绍</a>
+            <a href="#">功能说明</a>
+            <a href="#">微商云</a>
+        </div>
+        <div class="di-zi-new">
+            <div class="name">客户</div>
+            <a href="#">客户案例</a>
+        </div>
+        <div class="di-zi-new">
+            <div class="name">文档</div>
+            <a href="#">使用指南</a><a href="#">Q &amp; A</a>
+        </div>
+        <div class="di-zi-new" style="width: 150px;">
+            <div class="name">关于</div>
+            <a href="#">关于我们</a>
+        </div>
+        <div class="di-zi-new" style="width: 175px; ">
+            <div class="name" style=" color:#747474">联系我们</div>
+            <div class="contacting">QQ：2517646064</div>
+            <div class="contacting">电话：010-58749307</div>
+        </div>
+    </div>
+    <div class="dibottom">© 2014 版权所有 软通动力控股有限公司京ICP备11019727号</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<div class="info_Content">
+    <div class="info_Title" ng-bind="model.title"></div>
+    <div class="info_Text">
+        <ul class="water-progress-chart">
+            <li ng-repeat="item in ranking | orderBy: ['avg', 'area'] | limitTo: 5">
+                <span ng-bind="item.name" title="{{item.name}}"></span>
+                <div ng-style="barStyle">
+                    <div ng-style="{'left': item.styleLeft}">
+                        <!--<img ng-src="{{'images/' + item.avg + '.png'}}" alt="" title="{{item.toolTip}}"/>-->
+                        <img src="{{getIconUrl(item)}}" alt="" title="{{item.toolTip}}"/>
+                    </div>
+                </div>
+                <span class="degree" ng-bind="item.toolTip"></span>
+            </li>
+        </ul>
+    </div>
+</div>

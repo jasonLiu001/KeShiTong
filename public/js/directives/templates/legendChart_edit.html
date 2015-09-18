@@ -1,0 +1,39 @@
+<div class="editPropertyPanel">
+    <table>
+        <tr>
+            <td>
+                <span>标题</span>
+            </td>
+            <td>
+                <input type="text" ng-model="preModel.title"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>标题</span>
+                <a href="javascript:;" ng-click="controlFuns.addLevel()" class="ui-add-remove">+</a>
+            </td>
+            <td>
+                <table class="ui-edit-repeat-table1 ui-edit-innerTable">
+                    <tr>
+                        <th>颜色</th>
+                        <th>显示文本</th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="l in preModel.levels">
+                        <td>
+                            <input type="color" ng-model="l.color">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="l.text">
+                        </td>
+                        <td>
+                            <a href="javascript:;" ng-click="controlFuns.removeLevel($index)" class="ui-add-remove">-</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</div>

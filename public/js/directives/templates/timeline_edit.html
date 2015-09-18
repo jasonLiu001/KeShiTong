@@ -1,0 +1,25 @@
+<div class="editPropertyPanel">
+    <table class="ui-editTable">
+        <tr>
+            <td><span>标题</span></td>
+            <td><input type="text" ng-model="preModel.title"/></td>
+        </tr>
+        <tr>
+            <td><span>数据表</span></td>
+            <td>
+                <select title="数据表" ng-model="preModel.sheet" ng-options="schema as schema for schema in controlFuns.getSheets()">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><span>日期类型</span></td>
+            <td>
+                <select title="日期类型" ng-model="preModel.dateType" ng-options="type as type for type in controlFuns.getDateType()">
+                </select>
+
+            </td>
+        </tr>
+
+
+    </table>
+</div>

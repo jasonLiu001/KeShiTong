@@ -1,0 +1,10 @@
+<div class="bottom_Time"> 
+    <div class="switch_Time">
+        <ul>
+           <li ng-repeat="time in times" class="$index == 0 ? currHour : " ng-bind="time" ng-click="moveTime($index)"></li>
+        </ul>
+       <div id="current_Time" class="current_Time animate-move-time" ng-style="{ 'left' : leftPosition+'px'}">
+       </div>
+    </div>
+    <div ng-class="{move_Stop:!isMoveing,move_Auto:isMoveing}" ng-click="autoMove()"></div>
+</div>

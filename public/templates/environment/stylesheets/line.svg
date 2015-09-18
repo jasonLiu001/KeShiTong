@@ -1,0 +1,15 @@
+<svg version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+	<g transform="translate(0.5,0),rotate(180 16 3)">
+		<line x1="0" y1="0" x2="0" y2="6"
+style="stroke:rgb(255,255,255);stroke-width:1"/>
+		<line x1="8" y1="0" x2="8" y2="4"
+style="stroke:rgb(255,255,255);stroke-width:1"/>
+		<line x1="16" y1="0" x2="16" y2="3"
+style="stroke:rgb(255,255,255);stroke-width:1"/>
+		<line x1="24" y1="0" x2="24" y2="4"
+style="stroke:rgb(255,255,255);stroke-width:1"/>
+		<line x1="32" y1="0" x2="32" y2="6"
+style="stroke:rgb(255,255,255);stroke-width:1"/>
+	</g>
+</svg>

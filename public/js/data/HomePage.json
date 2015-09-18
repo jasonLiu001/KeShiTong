@@ -1,0 +1,12 @@
+{
+  "latestEdit":[{"title":"石家庄环保", "id":"customId", "icon":"/images/thumbnail01.png"},
+                {"title":"保定环保", "id":"customId", "icon":"/images/thumbnail01.png"}],
+  "templates":[{"title":"环保模板", "id":"templateId","icon":"/images/thumbnail01.png"}],
+  "unpublished":[{"title":"开封环保", "id":"customId", "icon":"/images/thumbnail01.png"},
+                {"title":"沧州环保","id":"customId", "icon":"/images/thumbnail01.png"},
+                {"title":"廊坊环保", "id":"customId","icon":"/images/thumbnail01.png"},
+                {"title":"天津环保","id":"customId", "icon":"/images/thumbnail01.png"}],
+  "published":[{"title":"邯郸环保", "id":"customId", "icon":"/images/thumbnail01.png"},
+              {"title":"张家口环保", "id":"customId", "icon":"/images/thumbnail01.png"},
+              {"title":"北京环保", "id":"customId", "icon":"/images/thumbnail01.png"}]
+}

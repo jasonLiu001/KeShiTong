@@ -1,0 +1,26 @@
+<div class="info_Content"> 
+    <div class="info_Title" ng-bind="tModel.title"></div>
+    <div class="info_Text"> 
+        <ul class="c-frame"> 
+            <li>
+                <ul class="c-levels">
+                    <li ng-repeat="color in tModel.legendColors"
+                        ng-style="{'background-color': color.color}"
+                        ng-class="(tModel.legendColors.length - $index) == groupByColumn ? 'c-selected' : ''"
+                            ></li>
+                </ul>
+            </li> 
+            <li></li> 
+            <li ng-repeat="cate in tModel.columns" ng-style="{ 'width': controlFuns.columnWidth()}">
+                <ul class="c-levels" id="{{cate.id}}">
+                    <li ng-repeat="color in cate.colors track by $index" ng-style="{'background-color':color.color}"></li>
+                </ul>
+            </li>
+        </ul> 
+        <ul class="c-frame c-title"> 
+               <li>总指标</li> 
+               <li>|</li> 
+               <li ng-repeat="col in model.columns" ng-bind="col.title" ng-style="{ 'width': controlFuns.columnWidth()}"></li>
+            </ul> 
+        </div> 
+</div>

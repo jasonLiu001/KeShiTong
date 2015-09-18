@@ -1,0 +1,410 @@
+﻿html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-family: 'Microsoft YaHei';
+}
+
+@font-face {
+    font-family: digitalfont;
+    src: url('http://www.youziku.com/UserDownFile/webfont.js');
+}
+
+* {
+    font-family: 'Microsoft YaHei';
+}
+
+.edit {
+    display: none;
+}
+
+.editing {
+    display: block;
+    color: black !important;
+    border: 1px solid #778899;
+}
+
+.main_Content {
+    overflow: auto;
+    height: 100%;
+    position: relative;
+}
+
+
+/*for left chart list */
+.left_Content {
+    position: absolute;
+    width: 363px;
+    top: 4%;
+    right:0px;
+    /*overflow: hidden;*/
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-left: none;
+}
+
+    .left_Content .top_Content {
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .left_Content .info_Content .info_Title {
+        font-weight: bold;
+        padding-left: 10px;
+        font-size: 15px;
+        line-height: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .left_Content .top_Content .time {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+
+        .left_Content .top_Content .time .text {
+            display: inline-block;
+        }
+
+        .left_Content .top_Content .time .val {
+            font-family: DS-Digital32381;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    .left_Content .top_Content .title {
+        font-size: 26px;
+        height: 55px;
+        line-height: 65px;
+    }
+
+    /*.left_Content .info_Content {
+        font-weight: bold;
+        padding-left: 10px;
+        font-size: 14px;
+        line-height: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }*/
+
+    .left_Content .info_Content .info_Text {
+        margin: 0 7px 15px 7px;
+        height: 150px;
+    }
+
+
+ul.c-levels {
+    width: 22px;
+    padding: 0px;
+    margin: 0px auto;
+    list-style: none;
+}
+
+    ul.c-levels li {
+        height: 13px;
+        width: 100%;
+        margin: 3px;
+        position: relative;
+    }
+
+.c-frame {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+}
+
+    .c-frame > li {
+        width: 55px;
+        padding: 5px;
+        float: left;
+        text-align: center;
+    }
+
+        .c-frame > li:first-child {
+            width: 50px;
+            padding: 5px;
+            text-align: right;
+        }
+
+        .c-frame > li:nth-child(2) {
+            width: 20px;
+            padding: 5px;
+        }
+
+        .c-frame > li:first-child ul li {
+            border: 0px;
+            height: 13px;
+            width: 24px;
+            /*margin-left: 30px;*/
+        }
+
+.c-title {
+    font-size: 12px;
+    text-align: center;
+}
+
+.c-selected:before {
+    content: ' ';
+    position: absolute;
+    top: 2px;
+    left: -15px;
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+}
+
+.water-progress-chart {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+    .water-progress-chart li {
+        font-size: 12px;
+        float: left;
+        height: 23px;
+        line-height: 23px;
+    }
+
+        .water-progress-chart li span {
+            float: left;
+            display: block;
+            width: 65px;
+            height: 23px;
+            overflow: hidden;
+            text-align: right;
+        }
+
+            .water-progress-chart li span.degree {
+                width: auto;
+            }
+
+        .water-progress-chart li > div {
+            width: 210px;
+            height: 5px;
+            margin: 10px 20px;
+            position: relative;
+            float: left;
+        }
+
+            .water-progress-chart li > div > div {
+                position: absolute;
+                top: -6px;
+            }
+
+        .water-progress-chart li img {
+            margin-left: -4px;
+        }
+
+
+/*for bottom*/
+.bottom_Tools {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 34px;
+    overflow: hidden;
+}
+
+    .bottom_Tools .bottom_icon {
+        margin-left: 10px;
+        float: left;
+        line-height: 34px;
+        width: 14px;
+        height: 14px;
+        line-height: 34px;
+        margin-top: 10px;
+    }
+
+    .bottom_Tools .bottom_Positon {
+        float: left;
+        width: 25%;
+        line-height: 30px;
+        height: 30px;
+        font-size: 14px;
+        margin-left: 3px;
+        line-height: 34px;
+    }
+
+    .bottom_Tools .bootom_SwitchMap {
+        line-height: 30px;
+        float: left;
+        margin-left: 1%;
+        width: 25%;
+        text-align: center;
+    }
+
+.animate-move-time {
+    transition: left 100ms;
+    -moz-transition: left 100ms; /* Firefox 4 */
+    -webkit-transition: left 100ms; /* Safari 和 Chrome */
+    -o-transition: left 100ms; /* Opera */
+}
+
+.bottom_Tools .bottom_Time {
+    float: left;
+    width: 40%;
+    height: 30px;
+    border-radius: 3px;
+    padding: 3px 0;
+    box-sizing: border-box;
+    position: relative;
+    /* margin-top: 2px; */
+    margin: 2px auto 0 auto;
+    text-align: center;
+}
+
+    .bottom_Tools .bottom_Time .switch_Time ul {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+        .bottom_Tools .bottom_Time .switch_Time ul li {
+            list-style: none;
+            float: left;
+            width: 7%;
+            display: inline-block;
+            padding-top: 12px;
+            font-size: 13px;
+            text-align: center;
+            background-position: 15px 6px;
+            cursor: pointer;
+        }
+
+            .bottom_Tools .bottom_Time .switch_Time ul li:first-child {
+                background-repeat: no-repeat;
+            }
+
+            .bottom_Tools .bottom_Time .switch_Time ul li:last-child {
+                width: 33px;
+                background-position: -17px 6px;
+                background-repeat: no-repeat;
+            }
+
+
+    .bottom_Tools .bottom_Time .switch_Time {
+        position: relative;
+        margin-left: 2%;
+    }
+
+    .bottom_Tools .bottom_Time .current_Time {
+        position: absolute;
+        left: 6px;
+        top: 3px;
+        width: 20px;
+        height: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .bottom_Tools .bottom_Time .move_Stop, .bottom_Tools .bottom_Time .move_Auto {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 5%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+
+/* for the right pop*/
+.right_Filter {
+    position: absolute;
+    left: 15px;
+    top: 5%;
+    border-right: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+    .right_Filter select {
+        line-height: 30px;
+        height: 30px;
+        width: 100%;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+
+    .right_Filter ul {
+        margin: 2px;
+        padding: 0 15px 15px;
+        text-align: left;
+    }
+
+        .right_Filter ul li {
+            list-style: none;
+            font-size: 12px;
+            line-height: 20px;
+            height: 20px;
+        }
+
+            .right_Filter ul li:before {
+                content: '';
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin-right: 4px;
+                vertical-align: middle;
+                margin-bottom: 3px;
+                border-radius: 50px;
+            }
+
+.lengedTitle {
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+}
+
+.info_Title .barHSubContainer {
+    float: left;
+    font-size: 12px;
+    color: #6C6C6E;
+}
+.barHSubContainer select
+{
+    margin-left:8px;
+}
+
+.info_Title .titileSpan {
+    float: left;
+    padding-right: 12px;
+}
+
+.info_Title .dataValue {
+    height: 6px;
+    width: 6px;
+    background-color: #008001;
+    float: left;
+    margin: 12px 3px;
+}
+
+.info_Title .dataStander {
+    height: 3px;
+    width: 12px;
+    background-color: #FE0000;
+    float: left;
+    margin: 14px 3px;
+}
+/*tab*/
+.pType {
+    margin: 8px;
+    padding: 0px;
+}
+
+    .pType li {
+        width: 49%;
+        display: inline-block;
+        padding: 3px;
+        list-style: none;
+        cursor: pointer;
+    }
+
+        .pType li.curr {
+            font-weight: bold;
+        }

@@ -1,0 +1,79 @@
+<div class="editPropertyPanel">
+    <table class="ui-editTable">
+        <tr>
+            <td><span>标题</span></td>
+            <td>
+                <input type="text" ng-model="preModel.title"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>颜色</span>
+                <a href="javascript:;" ng-click="controlFuns.addColor()" class="ui-add-remove">+</a>
+            </td>
+            <td>
+
+                <ul class="ui-colors">
+                    <li ng-repeat="color in preModel.legendColors">
+                        <input type="color" ng-model="color.color" class="ui-colorBox"/>
+                        <a href="javascript:;" ng-click="controlFuns.removeColor($index)" class="ui-add-remove">-</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><span>数据表</span></td>
+            <td>
+                <select title="数据表" ng-model="preModel.sheet" ng-options="schema as schema for schema in controlFuns.getSheets()">
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><span>分组列</span></td>
+            <td>
+                <select title="数据字段" ng-model="preModel.groupBy" ng-options="schema as schema for schema in controlFuns.getDataSchema()">
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>映射</span>
+                <a href="javascript:;" ng-click="controlFuns.addColumn()" class="ui-add-remove">+</a>
+            </td>
+            <td>
+                <table class="ui-mapTable">
+                    <tr>
+                        <td>数据字段</td>
+                        <td>显示名称</td>
+                        <td ng-repeat="color in preModel.legendColors" ng-style="{'background-color':color.color}">
+
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="column in preModel.columns">
+                        <td>
+                            <select title="数据字段" ng-model="column.name" ng-options="schema as schema for schema in controlFuns.getDataSchema()">
+
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" title="显示名称" ng-model="column.title">
+                        </td>
+                        <td ng-repeat="l in column.levels" ng-style="{'background-color': preModel.legendColors[$index].color}">
+                            <input type="text" class="ui-scope" title="最小值" ng-model="l.min">
+                            <input type="text" class="ui-scope" title="最大值" ng-model="l.max">
+                        </td>
+                        <td>
+                            <a href="javascript:;" ng-click="controlFuns.removeColumn($index)" class="ui-add-remove">-</a>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</div>

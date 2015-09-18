@@ -1,0 +1,71 @@
+<script>
+    var leftListFrame = $("leftListFrame");
+    var leftList = $("leftList");
+
+</script>
+<link rel="stylesheet" href="css/editStyle.css">
+<div class="container-fluid" id="mainContainer">
+    <div class="row header">
+        <div id="leftHeader">
+            <div class="innerContainer">
+                <div id="logo">
+                    <img src="images/logo.png" alt="" />
+                </div>
+                <span class="editerTitle">可视化系统编辑器</span>
+                <div id="topIconContainer">
+                    <!--<a href="javascript:;"><i class="fa fa-chevron-circle-left"></i></a>-->
+                    <!--<a href="javascript:;"><i class="fa fa-chevron-circle-right"></i></a>-->
+                    <!--<a href="javascript:;"><i class="fa fa-folder-open"></i></a>-->
+                    <a href="#/home" title="新建可视化系統"><i class="fa fa-file-text-o"></i></a>
+                    <a href="javascript:;" title="保存可视化系统" ng-click="saveUserTemplate()"><i class="fa fa-floppy-o"></i></a>
+                </div>
+            </div>
+        </div>
+        <div id="middleHeader">
+            <div class="innerContainer">
+                <div class="opContainer">
+                    <div class="operation"><i class="fa fa-eye"></i><a target="_blank" href="#/preview/{{userTemplateId}}">预览</a></div>
+                    <div class="operation"><i class="fa fa-file-text"></i><a href="javascript:;" ng-click="publishUserTemplate()" l>发布</a></div>
+                    <!--<div class="operation"><i class="fa fa-external-link"></i><a href="javascript:;">导出</a></div>-->
+                </div>
+            </div>
+        </div>
+        <div id="rightHeader">
+            <div class="innerContainer">
+                <div id="userContainer">
+                    <span ng-bind="model.email"></span>
+                    <div class="logoutdiv">
+                        <a class="logout" href="javascript:;" ng-click="logout()"><i class="fa fa-power-off"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="editPanel" width="100%" height="{{clientHeight}}">
+            <tr>
+                <td style=" background-color: #57616c;width:0; " valign="top">
+                    <left-panel></left-panel>
+                </td>
+                <td valign="top" style=" background-color: #2d343c; ">
+                    <div id="mainAera" style=" overflow:auto">
+                        <layout></layout>
+                    </div>
+                    <!--<div id="propertyPanel">-->
+                        <!--<p>控件属性</p>-->
+                        <!--<div ng-include="getEditTemplateUrl()"></div>-->
+                    <!--</div>-->
+                </td>
+                <td style="background-color: #57616c; width: 0; " valign="top" >
+                    <right-panel></right-panel>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row footer">
+        <p>Copyright</p>
+    </div>
+
+</div>
+
+

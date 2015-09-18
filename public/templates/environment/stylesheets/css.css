@@ -1,0 +1,617 @@
+﻿html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-family: 'Microsoft YaHei';
+}
+
+* {
+    font-family: 'Microsoft YaHei';
+}
+
+.edit {
+    display: none;
+}
+
+.editing {
+    display: block;
+    color: black !important;
+    border: 1px solid #778899;
+}
+
+.main_Content {
+    height: 100%;
+    position: relative;
+}
+
+#map_Content {
+    width: 100%;
+    height: 100%;
+}
+
+.left_Content {
+    position: absolute;
+    width: 363px;
+    /*height: 88%;*/
+    top: 4%;
+    background-color: #f4f5f7;
+    opacity: 0.95;
+    overflow: hidden;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: solid 1px #ffffff;
+    border-left: none;
+}
+
+    .left_Content .top_Content {
+        background-color: #373e44;
+        overflow: hidden;
+        text-align: center;
+    }
+
+        .left_Content .top_Content .title {
+            font-size: 26px;
+            /* font-weight: bold; */
+            color: #fdfdfd;
+            height: 55px;
+            line-height: 65px;
+            text-shadow: #000 0 2px 0;
+        }
+
+        .left_Content .top_Content .time {
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 16px;
+        }
+
+            .left_Content .top_Content .time .text {
+                display: inline-block;
+                color: #858C96;
+            }
+
+            .left_Content .top_Content .time .val {
+                font-family: DS-Digital32381;
+                
+                font-size: 20px;
+                font-weight: bold;
+                color: #4666c9;
+            }
+
+   
+
+        .left_Content .info_Content .info_Title {
+            font-weight: bold;
+            padding-left: 10px;
+            font-size: 14px;
+            line-height: 30px;
+            height: 30px;
+            /*background: #d4d6d9;*/ /* Old browsers */
+            background-image: url('../images/lefttitlebg.png');
+            background-repeat:no-repeat;
+            background-size:100%;
+            /*background: -moz-linear-gradient(left, #bdc0c5 0%, #ffffff 100%); /* FF3.6+ */
+            /*background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bdc0c5), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+            /*background: -webkit-linear-gradient(left, #bdc0c5 0%, #ffffff 100%); /* Chrome10+,Safari5.1+ */
+            /*background: -o-linear-gradient(left, #bdc0c5 0%, #ffffff 100%);*/ /* Opera 11.10+ */
+            /*background: -ms-linear-gradient(left, #bdc0c5 0%, #ffffff 100%);*/ /* IE10+ */
+            /*background: linear-gradient(to right, #bdc0c5 0%, #ffffff 100%);*/ /* W3C */
+            /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdc0c5', endColorstr='#ffffff',GradientType=1 );*/ /* IE6-9 */
+        }
+
+    .left_Content .navi_Content > ul {
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        width: 100%;
+    }
+
+        .left_Content .navi_Content > ul > li {
+            display: block;
+            /*position: absolute;*/
+            left: 0px;
+            top: 0px;
+            display: none;
+            width: 100%;
+        }
+
+    .left_Content .info_Content .info_Text {
+        margin: 15px 0;
+        height: 150px;
+    }
+
+ul.c-levels {
+    width: 22px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+    ul.c-levels li {
+        height: 11px;
+        border: 1px solid #ccc;
+        width: 100%;
+        margin: 3px;
+        position: relative;
+    }
+
+.c-frame {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+}
+
+    .c-frame > li {
+        width: 40px;
+        padding: 5px;
+        float: left;
+    }
+
+        .c-frame > li:first-child {
+            width: 50px;
+            padding: 5px;
+            text-align: right;
+        }
+
+        .c-frame > li:nth-child(2) {
+            width: 20px;
+            padding: 5px;
+        }
+
+        .c-frame > li:first-child ul li {
+            border: 0px;
+            height: 13px;
+            width: 24px;
+            margin-left: 30px;
+        }
+
+.c-title {
+    font-size: 12px;
+    text-align: center;
+}
+
+    .c-title li {
+        border-top: 1px solid #ccc;
+        color: #505050;
+    }
+
+.c-selected:before {
+    content: ' ';
+    position: absolute;
+    top: 2px;
+    left: -15px;
+    background-image: url(../Images/ico_blackarrow.png);
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+}
+
+.water-progress-chart {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+    .water-progress-chart li {
+        font-size: 12px;
+        float: left;
+        height: 23px;
+        line-height: 23px;
+    }
+
+.water-progress-chart li span {
+    float: left;
+    display: block;
+    width: 65px;
+    height: 23px;
+    overflow: hidden;
+    text-align: right;
+}
+
+            .water-progress-chart li span.degree {
+                width: auto;
+            }
+
+.water-progress-chart li>div {
+    width: 210px;
+    height: 5px;
+    background: linear-gradient(left, #4666C9, #789EEF, #B9CCF7, #FF7E7E, #F7412C);
+    background: -webkit-linear-gradient(left, #4666C9, #789EEF, #B9CCF7, #FF7E7E, #F7412C);
+    background: -ms-linear-gradient(left, #4666C9, #789EEF, #B9CCF7, #FF7E7E, #F7412C);
+    background: -o-linear-gradient(left, #4666C9, #789EEF, #B9CCF7, #FF7E7E, #F7412C);
+    background: -moz-linear-gradient(left, #4666C9, #789EEF, #B9CCF7, #FF7E7E, #F7412C);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4666C9', endColorstr='#F7412C', GradientType=1); /*IE<9>*/
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=1, startColorstr=#1471da, endColorstr=#1C85FB)";*/
+    /*IE8+*/
+    margin: 10px 20px;
+    position: relative;
+    float: left;
+}
+
+.water-progress-chart li > div > div{
+    position: absolute;
+    top: -6px;
+}
+
+.water-progress-chart li img {
+    margin-left: -4px;
+}
+
+.right_Filter {
+    position: absolute;
+    right: 0px;
+    top: 5%;
+    line-height: 35px;
+    background-color: #e5e6eb;
+    opacity: 0.8;
+    border: solid 1px #ffffff;
+    border-right: none;
+    padding: 15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+    .right_Filter select {
+        background-color: #3a3f45;
+        line-height: 30px;
+        height: 30px;
+        width: 100%;
+        color: #ffffff;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+
+    .right_Filter ul {
+        margin: 2px;
+        padding: 0px;
+        text-align: left;
+    }
+
+        .right_Filter ul li {
+            list-style: none;
+            font-size: 12px;
+            line-height: 20px;
+            height: 20px;
+        }
+
+            .right_Filter ul li:before {
+                content: '';
+                display: inline-block;
+                width: 25px;
+                height: 12px;
+                margin-right: 4px;
+                vertical-align: middle;
+                margin-bottom: 3px;
+            }
+
+            .right_Filter ul li.l5:before {
+                background-color: #f6412c;
+            }
+
+            .right_Filter ul li.l4:before {
+                background-color: #ff7e7e;
+            }
+
+            .right_Filter ul li.l3:before {
+                background-color: #b9ccf7;
+            }
+
+            .right_Filter ul li.l2:before {
+                background-color: #789eef;
+            }
+
+            .right_Filter ul li.l1:before {
+                background-color: #4666c9;
+            }
+
+.bottom_Tools {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 34px;
+    background-color: #e5e6eb;
+    opacity: 0.8;
+    overflow: hidden;
+    border-top: solid 1px #ffffff;
+}
+
+    .bottom_Tools .bottom_icon {
+        margin-left: 10px;
+        float: left;
+        line-height: 34px;
+    }
+
+    .bottom_Tools .bottom_Positon {
+        float: left;
+        width: 30%;
+        line-height: 30px;
+        height: 30px;
+        color: #4864cf;
+        font-size: 14px;
+        margin-left: 3px;
+        line-height: 34px;
+    }
+
+    .bottom_Tools .bottom_Time {
+        float: left;
+        width: 40%;
+        height: 30px;
+        border-radius: 3px;
+        background-color: #373f42;
+        padding: 3px 3px 3px 100px;
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 2px;
+    }
+
+        .bottom_Tools .bottom_Time .switch_Time {
+            position: relative;
+        }
+
+        .bottom_Tools .bottom_Time .current_Time {
+            position: absolute;
+            left: 6px;
+            top: 3px;
+            width: 20px;
+            height: 10px;
+            opacity: 0.5;
+            background-color: blue;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+.bottom_Tools .bottom_Time .move_Stop{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 5%;
+    background-image: url(../images/ico_play.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bottom_Tools .bottom_Time .move_Auto{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 5%;
+    background-image: url(../images/ico_pause.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.animate-move-time {
+    transition: left 100ms;
+    -moz-transition: left 100ms; /* Firefox 4 */
+    -webkit-transition: left 100ms; /* Safari 和 Chrome */
+    -o-transition: left 100ms; /* Opera */
+}
+
+.bottom_Tools .bottom_Time .switch_Time ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+    .bottom_Tools .bottom_Time .switch_Time ul li {
+        list-style: none;
+        float: left;
+        width: 32px;
+        display: inline-block;
+        padding-top: 12px;
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        background-image: url('line.svg');
+        background-position: 15px 6px;
+        cursor: pointer;
+    }
+
+        .bottom_Tools .bottom_Time .switch_Time ul li:first-child {
+            background-repeat: no-repeat;
+        }
+
+        .bottom_Tools .bottom_Time .switch_Time ul li:last-child {
+            width: 33px;
+            background-position: -17px 6px;
+            background-repeat: no-repeat;
+        }
+.bottom_Tools .bootom_SwitchMap
+{
+    line-height: 30px;
+    float: right;
+}
+.esriControlsBR{
+    display:none;
+}
+.BMap_pop {
+    opacity: 0.95;
+}
+
+.pop_Content {
+    position: relative;
+}
+
+    .pop_Content .serial {
+        line-height: 30px;
+        height: 30px;
+        color: "#769FEF";
+    }
+
+    .pop_Content .company {
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        padding: 5px 0px;
+        font-weight: bold;
+    }
+
+    .pop_Content .level_Content {
+        padding-left: 10px;
+        font-size: 13px;
+        color: gray;
+    }
+
+        .pop_Content .level_Content span {
+            display: inline-block;
+            width: 25px;
+            height: 12px;
+            margin-right: 4px;
+            vertical-align: middle;
+            margin-bottom: 3px;
+        }
+
+            .pop_Content .level_Content span.l5 {
+                background-color: #f6412c;
+            }
+
+            .pop_Content .level_Content span.l4 {
+                background-color: #ff7e7e;
+            }
+
+            .pop_Content .level_Content span.l3 {
+                background-color: #b9ccf7;
+            }
+
+            .pop_Content .level_Content span.l2 {
+                background-color: #789eef;
+            }
+
+            .pop_Content .level_Content span.l1 {
+                background-color: #4666c9;
+            }
+
+    .pop_Content .chart_Content {
+        margin-top: 3px;
+    }
+
+        .pop_Content .chart_Content .chart_Title {
+            color: "#769FEF";
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .pop_Content .chart_Content .chart_Line {
+        }
+/*地图Label*/
+.label_Content {
+    position: absolute;
+    cursor: pointer;
+}
+
+    .label_Content .tootip_Content {
+        margin: 0px auto 5px auto;
+        width: 30px;
+        height: 20px;
+    }
+
+        .label_Content .tootip_Content .label_Value {
+            font-size: 13px;
+            white-space: nowrap;
+            border-radius: 3px;
+            padding: 1px 3px;
+            color: rgb(255, 255, 255);
+            line-height: 18px;
+            text-align: center;
+            background: rgb(55, 62, 68);
+        }
+
+        .label_Content .tootip_Content .arraw_Content {
+            width: 0px;
+            position: absolute;
+            left: 50%;
+            border-left: 1px solid red;
+        }
+
+            .label_Content .tootip_Content .arraw_Content .arraw {
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                bottom: -8px;
+                left: -4px;
+                border-top-width: 10px;
+                border-top-style: solid;
+                border-top-color: rgb(55, 62, 68);
+                border-right-width: 3px;
+                border-right-style: solid;
+                border-right-color: transparent;
+                border-left-width: 3px;
+                border-left-style: solid;
+                border-left-color: transparent;
+            }
+
+    .label_Content .label_Name {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+/*
+        *地图图标
+        */
+.poll_Content {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.poll_Content_l1 {
+    background-image: url('http://img1.3lian.com/img2008/15/23/card0555.jpg');
+}
+
+.poll_Content_l2 {
+    background-image: url('http://news.gd.sina.com.cn/news/2011/04/13/1302635789_6dpdnk.jpg');
+}
+
+.poll_Content .type {
+    position: absolute;
+    bottom: 0px;
+    border-radius: 3px;
+    background-color: green;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 2px 0px;
+    font-size: 14px;
+}
+
+.poll_Content .value_Content {
+    position: absolute;
+    right: 10%;
+    bottom: 32px;
+    background-color: white;
+}
+
+    .poll_Content .value_Content div {
+        width: 20px;
+        height: 8px;
+        margin-top: 1px;
+        background-color: #BDC1CC;
+        border: 1px solid #DEDFE3;
+    }
+
+.poll_Content div.l1 {
+    background-color: #4666c9;
+}
+
+.poll_Content div.l2 {
+    background-color: #789eef;
+}
+
+.poll_Content div.l3 {
+    background-color: #b9ccf7;
+}
+
+.poll_Content div.l4 {
+    background-color: #ff7e7e;
+}
+
+.poll_Content div.l5 {
+    background-color: #f6412c;
+}
+
+.anchorBL {
+    display: none;
+}
